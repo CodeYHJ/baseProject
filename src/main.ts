@@ -1,4 +1,4 @@
-import "./less/index.less"
+import "./less/index.less";
 
 const a = 1;
-console.log(a)
+console.log(a);

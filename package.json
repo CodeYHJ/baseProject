@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "webpack-ts": "cross-env TS_NODE_PROJECT=%npm_package_config_TS_NODE_PROJECT%",
-    "dev": "yarn webpack-ts webpack-dev-server --config ./config/webpack/webpack.config.dev.ts --mode=development",
+    "webpack-ts": "cross-env TS_NODE_PROJECT=\"config/webpack/tsconfig-for-webpack-config.json\"",
+    "dev": "cross-env NODE_ENV=development yarn webpack-ts webpack-dev-server --config ./config/webpack/webpack.config.dev.ts",
     "build": "yarn webpack-ts webpack --config ./config/webpack/webpack.config.pro.ts --mode=production",
     "commit": "git add . && git-cz && git push",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
@@ -14,8 +14,7 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/@codeyhj/changlog-emojis"
-    },
-    "TS_NODE_PROJECT": "\"config/webpack/tsconfig-for-webpack-config.json\""
+    }
   },
   "name": "base-project",
   "version": "0.0.1",
