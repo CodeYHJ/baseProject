@@ -1,0 +1,58 @@
+{
+  "scripts": {
+    "webpack-ts": "cross-env TS_NODE_PROJECT=%npm_package_config_TS_NODE_PROJECT%",
+    "dev": "yarn webpack-ts webpack-dev-server --config ./config/webpack/webpack.config.dev.ts --mode=development",
+    "build": "yarn webpack-ts webpack --config ./config/webpack/webpack.config.pro.ts --mode=production",
+    "commit": "git add . && git-cz && git push",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/@codeyhj/changlog-emojis"
+    },
+    "TS_NODE_PROJECT": "\"config/webpack/tsconfig-for-webpack-config.json\""
+  },
+  "name": "base-project",
+  "version": "0.0.1",
+  "description": "Project for Base",
+  "main": "index.js",
+  "repository": "https://github.com/CodeYHJ/baseProject.git",
+  "author": "CodeYHJ <colgateyhj@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@codeyhj/changlog-emojis": "^0.0.4",
+    "@types/node": "^13.13.5",
+    "@types/webpack": "^4.41.12",
+    "@types/webpack-dev-server": "^3.10.1",
+    "autoprefixer": "^9.7.6",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "commitizen": "^4.1.2",
+    "cross-env": "^7.0.2",
+    "css-loader": "^3.5.3",
+    "cssnano": "^4.1.10",
+    "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.5",
+    "less": "^3.11.1",
+    "less-loader": "^6.1.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.2.1",
+    "ts-node": "^8.10.1",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.8.3",
+    "validate-commit-msg": "^2.14.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}

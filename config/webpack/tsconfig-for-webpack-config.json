@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "esModuleInterop": true,
+        "baseUrl": "./"
+    },
+    "files": ["./webpack.config.base","./webpack.config.dev","./webpack.config.pro"]
+}
