@@ -7,7 +7,7 @@ import HtmlwebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const baseConfig: webpack.Configuration = {
-  entry: path.resolve(__dirname, "../../src/main.ts"),
+  entry: path.resolve(process.cwd(), "./src/main.tsx"),
   output: {
     filename: "js/[name].[hash].js",
     chunkFilename: "js/[name].js",
