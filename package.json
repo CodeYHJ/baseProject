@@ -3,7 +3,7 @@
     "webpack-ts": "cross-env TS_NODE_PROJECT=\"config/webpack/tsconfig-for-webpack-config.json\"",
     "dev": "cross-env NODE_ENV=development yarn webpack-ts webpack-dev-server --config ./config/webpack/webpack.config.dev.ts",
     "build": "yarn webpack-ts webpack --config ./config/webpack/webpack.config.pro.ts --mode=production",
-    "commit": "git add . && commit",
+    "commit": "git add . && commit && git push",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "husky": {
@@ -50,7 +50,5 @@
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
   },
-  "dependencies": {
-    "axios": "^0.19.2"
-  }
+  "dependencies": {}
 }
