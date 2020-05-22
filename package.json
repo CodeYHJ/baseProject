@@ -1,57 +1,8 @@
 {
-  "scripts": {
-    "webpack-ts": "cross-env TS_NODE_PROJECT=\"config/webpack/tsconfig-for-webpack-config.json\"",
-    "dev": "cross-env NODE_ENV=development yarn webpack-ts webpack-dev-server --config ./config/webpack/webpack.config.dev.ts",
-    "build": "yarn webpack-ts webpack --config ./config/webpack/webpack.config.pro.ts --mode=production",
-    "commit": "git add . && commit && git push",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "name": "base-project",
-  "version": "0.0.1",
-  "description": "Project for Base",
+  "name": "baseProject",
+  "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/CodeYHJ/baseProject.git",
-  "author": "CodeYHJ <colgateyhj@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@codeyhj/changlog-emojis": "^0.0.4",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@commitlint/format": "^8.3.4",
-    "@commitlint/prompt-cli": "^8.3.5",
-    "@types/node": "^13.13.5",
-    "@types/webpack": "^4.41.12",
-    "@types/webpack-dev-server": "^3.10.1",
-    "@typescript-eslint/eslint-plugin": "^2.31.0",
-    "@typescript-eslint/parser": "^2.31.0",
-    "autoprefixer": "^9.7.6",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "commitizen": "^4.1.2",
-    "conventional-changelog-atom": "^2.0.7",
-    "cross-env": "^7.0.2",
-    "css-loader": "^3.5.3",
-    "cssnano": "^4.1.10",
-    "eslint": "^7.0.0",
-    "html-webpack-plugin": "^4.3.0",
-    "husky": "^4.2.5",
-    "less": "^3.11.1",
-    "less-loader": "^6.1.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "postcss-loader": "^3.0.0",
-    "style-loader": "^1.2.1",
-    "ts-node": "^8.10.1",
-    "tsconfig-paths": "^3.9.0",
-    "typescript": "^3.8.3",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^4.2.2"
-  },
-  "dependencies": {}
+  "author": "codeyhj <colgateyhj@gmail.com>",
+  "license": "MIT"
 }
