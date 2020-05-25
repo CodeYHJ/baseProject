@@ -1,11 +1,9 @@
 import webpack from "webpack";
 import { pathFn } from "./util";
-import HtmlwebpackPlugin from "html-webpack-plugin";
 import modules from "./modules";
 import HappyPack from "happypack";
-
 import autoprefixer from "autoprefixer";
-const autoprefixerFn = autoprefixer();
+
 const config: webpack.Configuration = {
   entry: pathFn("./src/app.tsx"),
   resolve: {
@@ -32,24 +30,13 @@ const config: webpack.Configuration = {
         {
           loader: "postcss-loader",
           options: {
-            plugins: [autoprefixerFn],
+            plugins: ()=>[autoprefixer()],
           },
         },
         "less-loader",
       ],
     }),
-    new webpack.DllReferencePlugin({
-      context: pathFn("./"),
-      manifest: require(pathFn("./dll/antd.mainfest.json")),
-    }),
-    new webpack.DllReferencePlugin({
-      context: pathFn("./"),
-      manifest: require(pathFn("./dll/antd.mainfest.json")),
-    }),
-    new HtmlwebpackPlugin({
-      title: "admin",
-      template: pathFn("./config/HTML/index.html"),
-    }),
+
   ],
 };
 export default config;

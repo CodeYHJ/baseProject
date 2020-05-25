@@ -4,17 +4,24 @@ import ReactDom from 'react-dom';
 
 import styles from './app.less'
 
-import { Button } from "antd"
+import Login from "./pages/Login"
+import Home from "./pages/Home"
+import MyRedirect from './pages/MyRedirect';
+import NotFound from './pages/NotFound';
 
-import Demo from "@com/demo";
+
+import { Switch, BrowserRouter as Router, Route, Redirect, } from "react-router-dom";
 
 const App = () => {
     return (
-        <div>
-            <div className={styles.run}>跑起来～</div>
-            <Button type="primary">123</Button>
-            <Demo />
-        </div>
+        <Router>
+            <Switch>
+                {/* <MyRedirect/> */}
+                <Route path="/login" exact component={Login} />
+                <Route path="/home" component={Home} />
+                <Route  component={NotFound} />
+            </Switch>
+        </Router>
     )
 }
 
