@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import ReactDom from "react-dom";
-import { INIT_USER_Type } from "./UserTypes";
+import { INIT_USER_Type, IContextProps } from "./UserTypes";
 import { UserReducer } from "./UserReducer";
 
 export const INIT_USER: INIT_USER_Type = {
@@ -8,9 +8,9 @@ export const INIT_USER: INIT_USER_Type = {
   isLogin: false,
 };
 
-export const UserContext = createContext(INIT_USER);
+export const UserContext = createContext({} as IContextProps);
 
-const UserProvider = (props) => {
+const UserProvider: React.SFC = (props) => {
   const [userStore, dispatchUser] = useReducer(UserReducer, INIT_USER);
   return (
     <UserContext.Provider value={{ userStore, dispatchUser }}>
