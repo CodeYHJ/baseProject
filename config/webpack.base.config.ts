@@ -10,6 +10,7 @@ const config: webpack.Configuration = {
     extensions: [".ts", ".tsx", ".js", "jsx"],
     alias: {
       "@com": pathFn("./src/component"),
+      "@pages": pathFn("./src/pages"),
     },
   },
   module: modules,
@@ -18,7 +19,6 @@ const config: webpack.Configuration = {
       id: "styles",
       threads: 3,
       loaders: [
-        "style-loader",
         {
           loader: "css-loader",
           options: {
@@ -30,7 +30,7 @@ const config: webpack.Configuration = {
         {
           loader: "postcss-loader",
           options: {
-            plugins: ()=>[autoprefixer()],
+            plugins: () => [autoprefixer()],
           },
         },
         "less-loader",

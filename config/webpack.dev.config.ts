@@ -26,8 +26,8 @@ const config: webpack.Configuration = {
       inject: true,
       title: 'baseproject',
       template: pathFn('./config/HTML/index.html')
-    })
-    // new HardSourceWebpackPlugin(),
+    }),
+    new HardSourceWebpackPlugin(),
 
   ]
 };

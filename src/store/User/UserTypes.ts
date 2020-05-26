@@ -8,6 +8,6 @@ export type ActionType =
   | { type: "LOGIN_OUT" };
 
 export interface IContextProps {
-  state: INIT_USER_Type;
-  dispatch: ({ type }: { type: string }) => void;
+  userStore: INIT_USER_Type;
+  dispatchForUser: (Action:ActionType) => void;
 }

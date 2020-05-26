@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { lazy } from 'react';
 
 import { Switch, Route, Redirect, } from "react-router-dom";
 
-import Demo1 from './pages/demo1';
+const Demo1 = lazy(() => import(/* webpackChunkName: "Demo1" */ "@pages/Home/pages/demo1"))
 
-import Demo2 from './pages/demo2';
-import NotFound from '../NotFound';
+const Demo2 = lazy(() => import(/* webpackChunkName: "Demo2" */ "@pages/Home/pages/demo2"))
+
+const NotFound = lazy(() => import(/* webpackChunkName: "NotFound" */"@pages/NotFound"))
 
 export interface HomeProps {
 
